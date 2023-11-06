@@ -1,30 +1,29 @@
-# Hotel Management Network Design & Implementation
+# VoIP - IP Telephony System Network Design & Implementation
 <h2>Introduction</h2>
-<p>We are required to design and implement Vic Modern Hotel network. The hotel has three floors; in the first floor there three departments (Reception, store and Logistics), in the second floor there are three departments (Finance, HR and Sales/Marketing), while the third floor hosts the IT and Admin. Therefore, the following are part of the considerations during the design and implementation:</p>
+<p>Turtle Consultancy Limited specialised in delivering IT infrastructure solutions to mediumsized organizations worldwide. With the expansion of the company, a newly acquired branch needs a network. Your manager is faced with the demands of business and a plethora of technology challenges. You have been recently hired as a Network Engineer and assigned the task of designing and implementing a VoIP network that is based on the requirements and specifications outlined by your manager. All desktops have an associated telephone set (each PC is connecting directly to a Phone, not a switch). The network consists of four servers (DHCP, EMAIL, DNS,HTTP) located at the server side site and is fully configured for the operations, and all servers are shared between all users.</p>
 
-* There should be three routers connecting each floor (all placed in the server room in IT department).<br> 
-* All routers should be connected to each other using serial DCE cable.<br> 
-* Each floor is expected to have one switch (placed in the respective floor).<br> 
-* Each floor is expected to have WIFI networks connected to laptops and phones.<br> 
-* Each department is expected to have a printer.<br>
-* Each department is expected to be in different VLAN with the following details.<br> 
+<p>Each group has been assigned the task of designing, and implementing a network infrastructure for Turtle Consultancy Limited by internetworking three departments which are as follows:</p>
+<img src="https://github.com/Jackiedee1223/image-repos/blob/main/voip.png">
 
 
 <h2>Details</h2>
+<p>The IT Manager emphasized scalability and availability, and hence you are required to provide a complete network infrastructure design and implementation. Turtle Consultancy Limited will be using the following IP address: 192.168.100.0/24 for Data, 172.16.100.0/24 for Voice, and 10.10.10.0/24 between the routers.</p>
 
-<b>1st Floor</b>
-- Reception- VLAN 80, Network of 192.168.8.0/24
-- Store- VLAN 70, Network of 192.168.7.0/24
-- Logistics- VLAN 60, Network of 192.168.6.0/24
-
-<b>2nd Floor</b>
-- Finance- VLAN 50, Network of 192.168.5.0/24
-- HR- VLAN 40, Network of 192.168.4.0/24
-- Sales- VLAN 30, Network of 192.168.3.0/24
-
-<b>3rd Floor</b>
-- Admin- VLAN 20, Network of 192.168.2.0/24
-- IT- VLAN 10, Network of 192.168.1.0/24
+* Design a networked system to meet the given specifications. Use packet tracer software to design your network.
+* Routers- Each department is to have VoIP enabled router with server-side LAN attached to the ICT department router. Note: use Cisco 2811 router.
+* Switches- Each department has an access layer switch. Note: use Cisco 2960 switch.
+* Connections- Use serial connections between a router and a router, then a straightthrough cable between the router to switch, switch to hosts, phones to PCs.
+* Subnets- Each department will be accessing two subnetworks, for example, data and voice subnets. Note: carry out appropriate subnetting.
+* Basic settings- Configure basic device settings such as hostnames, console passwords, enable passwords, banner messages, encrypt all passwords, and disable IP domain lookup.
+* DHCP Server- For voice (VoIP), use the respective router as the DHCP server while for Data use the DHCP server device at the server-side site.
+* VLANs- Each department will be in two VLANS. One for data and another for voice. Note: All IP phones in the network should be in VLAN 100.
+* Inter-VLAN Routing- Use router-on-a-stick to enable inter-VLAN routing on the network. Note: create subinterfaces for both data and voice VLANs.
+* IP Addressing- All devices in the network are expected to obtain an IP address dynamically from the respective DHCP servers while the devices in the server room are to be allocated IP addresses statically.
+* Routing protocol- Use OSPF as the routing protocol to advertise routes on the routers.
+* Remote Access- Configure SSH in all the routers for remote login.
+* Telephony service- Configure VoIP on the routers and allocate dial numbers in this format for the departments, Finance(1..), HR (2..), Sales (3..), and ICT (4..), (where 1.. can be 101 to 199) and so on.
+* Routing for VoIP- Configure dial-peering on the routers to allow IP phones from different routers to communicate.
+* Finalize- Test Communication, ensure everything configured is working as expected.
 
 
 <h2>Technologies Implemented</h2>
@@ -37,18 +36,23 @@
 * Configure port security to IT-dept switch to allow only Test-PC to access port fa0/1 (use sticky method to obtain mac-address with violation mode of shutdown.
 
 <h2>Steps</h2>
-<p>1. Creating a network topology.</p>
-<p>2. Hierarchical Network Design.</p>
-3. Connecting Networking devices with Correct cabling.</p>
-4. Creating VLANs and assigning ports VLAN numbers.</p>
-5. Subnetting and IP Addressing.</p>
-6. Configuring Inter-VLAN Routing (Router on a stick).</p>
-7. Configuring DHCP Server (Router as the DHCP Server).</p>
-8. Configuring SSH for secure Remote access.</p>
-9. Configuring switchport security or Port-Security on the switches.</p>
-10. Configuring WLAN or wireless network (Cisco Access Point).</p>
-11. Host Device Configurations.</p>
-12. Test and Verifying Network Communication.</p>
+
+* Creating a network topology using Cisco Packet Tracer.
+* Hierarchical Network Design.
+* Connecting Networking devices with Correct cabling.
+* Configuring Basic device settings.
+* Creating VLANs and assigning ports VLAN numbers.
+* Creating both data and voice VLANs and assigning ports VLAN numbers.
+* Subnetting and IP Addressing.
+* Configuring Inter-VLAN Routing on the Routers (router-on-a-stick).
+* Configuring Dedicated DHCP Server device for Data to provide dynamic IP allocation.
+* Configuring Routers as DHCP server for Voice to provide IP Phones dynamic IP allocation.
+* Configuring SSH for secure Remote access.
+* Configuring OSPF as the routing protocol.
+* Configuring VoIP or Telephony service configuration in all routers.
+* Configuring Routing for VoIP or Dial peering configuration in all routers.
+* Host Device Configurations.
+* Test and Verifying Network Communication.
 
 
 <h2>Result</h2>
