@@ -1,40 +1,59 @@
-# VoIP Telephony Network Design & Implementation
+# Hotel Management Network Design & Implementation
 <h2>Introduction</h2>
-<p>Smile University is a large university which has two campuses situated 20 miles apart. The university's students and staff are distributed in 4 faculties; these include the faculties of:<br> 
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#x2022; Faculty of Business (FOB)<br> 
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#x2022; Faculty of Law (FOL)<br> 
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp &#x2022; Faculty of Information, Sains and Technology (FIST)<br> 
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#x2022; Faculty of Engineering & Technology (FET)<br> 
-</p>
+<p>We are required to design and implement Vic Modern Hotel network. The hotel has three floors; in the first floor there three departments (Reception, store and Logistics), in the second floor there are three departments (Finance, HR and Sales/Marketing), while the third floor hosts the IT and Admin. Therefore, the following are part of the considerations during the design and implementation:</p>
 
-<h2>Requirements</h2>
- <p> Create a network topology with the main components to support the following:<br><br>
-  <b>Main campus:</b> <br>
-<b>Building-A</b> is the dministrative staff in the departments of management, HR and finance. The admin staff PCs are distributed in the building offices and it is expected that they will share some networking equipment (VLAN). 
-  The Faculty of Business is also situated in this building. 
-  <b>Building-B</b> is Faculty of Engineering and Laws. <br>
-  <b>Building-C</b> is Students' labs and IT department. 
-  The IT department hosts the University Web Server and other servers. 
-  There is alos an email server hosted externally on the cloud.<br><br>
- <b>Sub campus:</b> <br>
-<b>Faculy of Cinematic Arts(FOC)</b> is staff and student's labs are situated on separated floors.
+* There should be three routers connecting each floor (all placed in the server room in IT department).<br> 
+* All routers should be connected to each other using serial DCE cable.<br> 
+* Each floor is expected to have one switch (placed in the respective floor).<br> 
+* Each floor is expected to have WIFI networks connected to laptops and phones.<br> 
+* Each department is expected to have a printer.<br>
+* Each department is expected to be in different VLAN with the following details.<br> 
 
 
-Each department/faculty is expected to be on its own separate IP network.
-The switches should be configured with appropriate VLANs and security settings.
-RIPv2 will be used to provide routing for the routers in the internal network and static routing for the external server.
-The devices in building A will be expected to acquire dynamic IP addresses from a router-based DHCP server.</p>
+<h2>Details</h2>
+
+<b>1st Floor</b>
+- Reception- VLAN 80, Network of 192.168.8.0/24
+- Store- VLAN 70, Network of 192.168.7.0/24
+- Logistics- VLAN 60, Network of 192.168.6.0/24
+
+<b>2nd Floor</b>
+- Finance- VLAN 50, Network of 192.168.5.0/24
+- HR- VLAN 40, Network of 192.168.4.0/24
+- Sales- VLAN 30, Network of 192.168.3.0/24
+
+<b>3rd Floor</b>
+- Admin- VLAN 20, Network of 192.168.2.0/24
+- IT- VLAN 10, Network of 192.168.1.0/24
+
 
 <h2>Technologies Implemented</h2>
-<p>1. Expected to configure the core devices and few end devices to provide end-to-end connectivity and access to the internal servers and the external server.</p>
-<p>2. Each faculty/department is expected to be on its own separate IP network. The switches should be configured with appropriate VLANs and security settings.</p>
-<p>3. RIPv2 will be used to provide routing for the routers in the internal network and static routing for the external server.</p>
-<p>4. The devices in building A will be expected to acquired dynamic IP address from a router-based DHCP server.</p>
-<p>5. VLANs, Inter-VLAN Routing (Router on a stick), DHCP Server, Port-Security, SSH, WLAN.</p>
+
+* Use OSPF as the routing protocol to advertise routes.
+* All devices in the network are expected to obtain IP address dynamically with their respective router configured as the DHCP server.
+* All the devices in the network are expected to communicate with each other.
+* Configure SSH in all the routers for remote login.
+* In IT department, add PC called Test-PC to port fa0/1 and use it to test remote login.
+* Configure port security to IT-dept switch to allow only Test-PC to access port fa0/1 (use sticky method to obtain mac-address with violation mode of shutdown.
+
+<h2>Steps</h2>
+<p>1. Creating a network topology.</p>
+<p>2. Hierarchical Network Design.</p>
+3. Connecting Networking devices with Correct cabling.</p>
+4. Creating VLANs and assigning ports VLAN numbers.</p>
+5. Subnetting and IP Addressing.</p>
+6. Configuring Inter-VLAN Routing (Router on a stick).</p>
+7. Configuring DHCP Server (Router as the DHCP Server).</p>
+8. Configuring SSH for secure Remote access.</p>
+9. Configuring switchport security or Port-Security on the switches.</p>
+10. Configuring WLAN or wireless network (Cisco Access Point).</p>
+11. Host Device Configurations.</p>
+12. Test and Verifying Network Communication.</p>
+
 
 <h2>Result</h2>
-<img src="https://raw.githubusercontent.com/Jackiedee1223/image-repos/5b028134805ba2b26edaaf3bd33b0d9d0a85fecd/Network%20Design.png">
+<img src="https://github.com/Jackiedee1223/image-repos/blob/main/hmi.png">
 
 <h2>Reference</h2>
-<p>Learning from GURUTECH NETWORKS </p>
+<p>Learning from <b>GURUTECH NETWORKS<br> </p>
 
