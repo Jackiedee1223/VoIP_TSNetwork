@@ -6,7 +6,7 @@
 <img src="https://github.com/Jackiedee1223/image-repos/blob/main/voip.png">
 
 
-<h2>Details</h2>
+<h2>Requirements</h2>
 <p>The IT Manager emphasized scalability and availability, and hence you are required to provide a complete network infrastructure design and implementation. Turtle Consultancy Limited will be using the following IP address: 192.168.100.0/24 for Data, 172.16.100.0/24 for Voice, and 10.10.10.0/24 between the routers.</p>
 
 * Design a networked system to meet the given specifications. Use packet tracer software to design your network.
