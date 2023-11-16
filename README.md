@@ -56,7 +56,7 @@
 
 
 <h2>Result</h2>
-<img src="https://github.com/Jackiedee1223/image-repos/blob/main/hmi.png">
+<img src="https://github.com/Jackiedee1223/image-repos/blob/main/VoIPTelephony2.png">
 
 <h2>Reference</h2>
 <p>Learning from <b>GURUTECH NETWORKS<br> </p>
